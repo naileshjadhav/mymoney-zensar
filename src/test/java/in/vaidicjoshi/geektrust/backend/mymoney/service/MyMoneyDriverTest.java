@@ -48,10 +48,10 @@ class MyMoneyDriverTest {
   @Test
   void testExecuteCommandsFromFileWithValidFile() throws IOException {
     String inputFile =
-        Objects.requireNonNull(this.getClass().getClassLoader().getResource("build/resources/test/testInputFile"))
+        Objects.requireNonNull(this.getClass().getClassLoader().getResource("testInputFile"))
             .getFile();
     String outputFile =
-        Objects.requireNonNull(this.getClass().getClassLoader().getResource("build/resources/test/testOutputFile"))
+        Objects.requireNonNull(this.getClass().getClassLoader().getResource("testOutputFile"))
             .getFile();
     List<String> output = myMoneyDriver.executeCommandsFromFile(inputFile);
     try (Stream<String> lines = Files.lines(Paths.get(outputFile))) {
